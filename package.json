@@ -1,0 +1,32 @@
+{
+  "name": "angularmaterial",
+  "version": "1.0.0",
+  "description": "�An employee book about the angular-material",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fanpeiyao/angularMaterial.git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "fanpy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fanpeiyao/angularMaterial/issues"
+  },
+  "homepage": "https://github.com/fanpeiyao/angularMaterial#readme",
+  "dependencies": {
+    "fs-extra": "^4.0.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-replace": "^0.6.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8"
+  }
+}

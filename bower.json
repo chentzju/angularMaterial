@@ -1,0 +1,30 @@
+{
+  "name": "angularmaterial",
+  "description": "�An employee book about the angular-material",
+  "main": "index.js",
+  "authors": [
+    "fanpy"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "angular"
+  ],
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "^1.0.6",
+    "oclazyload": "^1.1.0"
+  },
+  "devDependencies": {
+    "angular": "^1.6.6",
+    "angular-animate": "^1.6.6",
+    "angular-aria": "^1.6.6",
+    "angular-material": "^1.1.4"
+  }
+}
