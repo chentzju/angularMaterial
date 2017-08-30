@@ -8,10 +8,7 @@ module.exports = {
     modules:[
         {name:'account',path: appPath + 'views/account'},
         {name:'product',  path: appPath + 'views/product'},
-        {name:'myorder',path: appPath + 'views/myorder'},
-        {name:'order',path: appPath + 'views/order'},
         {name:'profile',path: appPath + 'views/profile'},
-        {name:'delivery',path: appPath + 'views/delivery'},
         {name:'public',path: appPath + 'views/public'}
     ]
 };

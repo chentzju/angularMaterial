@@ -31,50 +31,24 @@
         <div class="home-list">
             <ul class = "" layout="row">
                 <li class="fn-text-middle" flex="33">
-                    <a ui-sref="myorder.orderList">
-                        <i class="iconfont icon-wodedingdan color-credit"></i>
-                        <span>我的订单</span>
-                    </a>
-                </li>
-                <li class="fn-text-middle" flex="33">
-                    <a ui-sref="payment.paymentList" >
-                        <ng-md-icon icon="send" style="fill: pink" ></ng-md-icon>
-                        <span>我的付款单</span>
-
-                    </a>
-                </li>
-                <li class="fn-text-middle" flex="33">
-                    <a ui-sref="delivery.deliveryList">
-                        <i class="iconfont icon-bill-sent color-more"></i>
-                        <span>我的发货单</span>
-                    </a>
-                </li>
-            </ul>
-            <ul class = "" layout="row">
-
-                <li class="fn-text-middle" flex="33">
-                    <a ui-sref="order.cart">
-                        <i class="iconfont icon-gouwuche color-invoice"></i>
-                        <span>我的购物车</span>
-                    </a>
-                </li>
-                <li class="fn-text-middle" flex="33">
                     <a ui-sref="profile.info">
                         <i class="iconfont icon-gerenxinxi color-credit "></i>
                         <span>个人信息</span>
                     </a>
                 </li>
-                <li class="fn-text-middle" ng-repeat="otherModule in otherModules" flex="33">
-                    <a href="{{otherModule.url}}">
-                        <i class="iconfont icon-fill1fill2 color-more"></i>
-                        <span ng-bind="otherModule.name"></span>
+                <li class="fn-text-middle" flex="33">
+                    <a ui-sref="product.productList" >
+                        <ng-md-icon icon="send" style="fill: pink" ></ng-md-icon>
+                        <span>人员列表</span>
+                    </a>
+                </li>
+                <li class="fn-text-middle" flex="33">
+                    <a>
+                        <i class="iconfont icon-bill-sent color-more"></i>
+                        <span>我的发货单</span>
                     </a>
                 </li>
             </ul>
-
-
-
-
         </div>
     </scroll-content>
 

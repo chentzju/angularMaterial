@@ -36,7 +36,6 @@ gulp.task("assets",function(){
 //copy files
 gulp.task('copy',function(){
     gulp.src('src/app/templates/*').pipe(gulp.dest('dist/templates'));
-    gulp.src('src/app/iconfont/*').pipe(gulp.dest('dist/styles/iconfont'));
     gulp.src('src/index.html').pipe(gulp.dest('dist'));
     gulp.src('src/404.html').pipe(gulp.dest('dist'));
 

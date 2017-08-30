@@ -57,85 +57,60 @@ var myApp = angular.module("myApp",['ui.router','ngMaterial','ngAria','ngAnimate
                 controller:'ProductCtrl'
             })
 
-            //购物车和订单部分
-            .state('order',{
-                url:'/order',
-                templateUrl: 'views/public/main.html',
-                abstract:true,
-                resolve:{
-                    load:['$ocLazyLoad', function($ocLazyLoad) {
-                        return $ocLazyLoad.load([
-                            'views/order/css/order.css',
-                            'scripts/controllers/order-ctrl.js',
-                            'scripts/services/cart-serv.js'
-                        ])
-                    }]
-                }
-            })
-
-            //购物车
-            .state('order.cart',{
-                url:'/cart',
-                title:'购物车',
-                backState:'app',
-                templateUrl:'views/order/cart.html',
-                controller:'cartCtrl'
-            })
-
-
-
-        /**
-         *  我的订单
-         */
-                .state('myorder',{
-                    url:'/myorder',
-                    templateUrl:'views/public/main.html',
-                    abstract:true,
-                    resolve:{
-                        load:['$ocLazyLoad', function($ocLazyLoad) {
-                            return $ocLazyLoad.load([
-                                    'scripts/controllers/myorder-ctrl.js',
-                                    'scripts/services/order-serv.js',
-                                    'views/myorder/css/myorder.css'
-                                ]);
-                        }]
-                    }
-                })
-                .state('myorder.orderList',{
-                    url:'/orderList',
-                    title:'订单',
-                    templateUrl:'views/myorder/orderList.html',
-                    controller:'OrderListCtrl'
-                })
-
-
+        //     //购物车和订单部分
+        //     .state('order',{
+        //         url:'/order',
+        //         templateUrl: 'views/public/main.html',
+        //         abstract:true,
+        //         resolve:{
+        //             load:['$ocLazyLoad', function($ocLazyLoad) {
+        //                 return $ocLazyLoad.load([
+        //                     'views/order/css/order.css',
+        //                     'scripts/controllers/order-ctrl.js',
+        //                     'scripts/services/cart-serv.js'
+        //                 ])
+        //             }]
+        //         }
+        //     })
+        //
+        //     //购物车
+        //     .state('order.cart',{
+        //         url:'/cart',
+        //         title:'购物车',
+        //         backState:'app',
+        //         templateUrl:'views/order/cart.html',
+        //         controller:'cartCtrl'
+        //     })
+        //
+        //
+        //
+        // /**
+        //  *  我的订单
+        //  */
+        //         .state('myorder',{
+        //             url:'/myorder',
+        //             templateUrl:'views/public/main.html',
+        //             abstract:true,
+        //             resolve:{
+        //                 load:['$ocLazyLoad', function($ocLazyLoad) {
+        //                     return $ocLazyLoad.load([
+        //                             'scripts/controllers/myorder-ctrl.js',
+        //                             'scripts/services/order-serv.js',
+        //                             'views/myorder/css/myorder.css'
+        //                         ]);
+        //                 }]
+        //             }
+        //         })
+        //         .state('myorder.orderList',{
+        //             url:'/orderList',
+        //             title:'订单',
+        //             templateUrl:'views/myorder/orderList.html',
+        //             controller:'OrderListCtrl'
+        //         })
 
 
 
-            /**
-             * 发货信息
-             */
-                .state('delivery',{
-                    url:'/delivery',
-                    templateUrl:'views/public/main.html',
-                    abstract:true,
-                    resolve:{
-                        load:['$ocLazyLoad', function($ocLazyLoad) {
-                            return $ocLazyLoad.load([
-                                'scripts/controllers/delivery-ctrl.js',
-                                'scripts/services/delivery-serv.js',
-                                'views/delivery/css/delivery.css'
-                            ]);
-                        }]
-                    }
-                })
-                .state('delivery.deliveryList',{
-                    url:'/deliveryList',
-                    title:'我的发货单',
-                    backState:'app',
-                    templateUrl:'views/delivery/deliveryList.html',
-                    controller:'DeliveryListCtrl'
-                })
+
 
 
 
