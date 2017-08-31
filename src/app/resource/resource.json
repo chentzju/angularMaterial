@@ -1,0 +1,24 @@
+{
+  "dateList":[{
+    "name": "范佩瑶",
+    "age": 21,
+    "sex": "女",
+    "photo":"images/1.jpg",
+    "interest":["爱好1", "爱好2", "爱好3"]
+  },
+    {
+      "name": "吕锦程",
+      "age": 25,
+      "sex": "男",
+      "photo":"images/3.jpg",
+      "interest":["爱好1", "爱好2", "爱好3"]
+
+    }, {
+      "name": "王萌",
+      "age": 23,
+      "sex": "女",
+      "photo":"images/2.jpg",
+      "interest":["爱好1", "爱好2"]
+    }
+  ]
+}
