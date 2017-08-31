@@ -16,7 +16,7 @@ var myApp = angular.module("myApp",['ui.router','ngMaterial','ngAria','ngAnimate
                 url:'/error',
                 templateUrl:'404.html'
             })
-            .state('man.manList',{
+            .state('manList',{
                 url:'/manList',
                 title:'人员列表',
                 templateUrl:'views/man/manList.html',
