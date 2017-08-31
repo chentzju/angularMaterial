@@ -1,0 +1,60 @@
+<div  class="manList">
+    <md-content class="md-padding" layout-xs="column" layout="row">
+        <div flex-xs flex-gt-xs="50" layout="column">
+            <md-card ng-repeat="user in users">
+                <img ng-src="views/man/img/washedout.png"  class="md-card-image">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{user.name}}个人简介 </span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <p>
+                        小李喜欢吃火锅，但是小李不吃辣椒，小李是一个不吃辣椒的四川人
+                    </p>
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button class="md-icon-button" aria-label="Favorite">
+                        <ng-md-icon icon="favorite" style="fill: pink" ></ng-md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="Settings">
+                        <ng-md-icon icon="dehaze"  ></ng-md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="Share">
+                        <ng-md-icon icon="reply"></ng-md-icon>
+                    </md-button>
+                </md-card-actions>
+            </md-card>
+
+
+
+            <md-card>
+                <img ng-src="views/man/img/washedout.png" class="md-card-image" >
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Icon action buttons</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <p>
+                        小陈喜欢吃西瓜，小陈以前有一个女同学叫阿和，隐忍的就像昨晚的那颗星星
+                    </p>
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button class="md-icon-button" aria-label="Favorite">
+                        <ng-md-icon icon="favorite" style="fill: pink" ></ng-md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="Settings">
+                        <ng-md-icon icon="dehaze"  ></ng-md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="Share">
+                        <ng-md-icon icon="reply"></ng-md-icon>
+                    </md-button>
+                </md-card-actions>
+            </md-card>
+
+
+
+        </div>
+    </md-content>
+</div>

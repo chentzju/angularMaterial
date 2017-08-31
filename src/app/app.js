@@ -39,11 +39,14 @@ var myApp = angular.module("myApp",['ui.router','ngMaterial','ngAria','ngAnimate
 
 
     }])
-    .controller("ManCtrl",["$scope","ProductService",function ($scope,ProductService) {
+    .controller("ManCtrl",["$scope","ManService",function ($scope,ManService) {
+
+        ManService.then(function (result) {
+            $scope.users = result.data.dateList;
+        })
 
 
-
-    }])
+        }])
     .controller("ManDetailCtrl",["$scope",'$stateParams','ManService',function ($scope,$stateParams,ProductService) {
 
 
