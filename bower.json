@@ -18,8 +18,7 @@
     "tests"
   ],
   "dependencies": {
-    "angular-ui-router": "^1.0.6",
-    "oclazyload": "^1.1.0"
+    "angular-ui-router": "^1.0.6"
   },
   "devDependencies": {
     "angular": "^1.6.6",
