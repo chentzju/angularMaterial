@@ -1,11 +1,11 @@
 <div  class="manList">
     <md-content class="md-padding" layout-xs="column" layout="row">
         <div flex-xs flex-gt-xs="50" layout="column">
-            <md-card>
+            <md-card ng-repeat="user in users">
                 <img ng-src="views/man/img/washedout.png"  class="md-card-image">
                 <md-card-title>
                     <md-card-title-text>
-                        <span class="md-headline">小李的个人简介 </span>
+                        <span class="md-headline">{{user.name}}个人简介 </span>
                     </md-card-title-text>
                 </md-card-title>
                 <md-card-content>
