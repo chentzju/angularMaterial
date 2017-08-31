@@ -1,12 +1,10 @@
 var gulp = require("gulp");
-//var gutil = require("gulp-util");
 var concat = require("gulp-concat");
 var uglify = require('gulp-uglify');
 var cssmin = require('gulp-cssmin');
 var fse = require('fs-extra');
 var connect = require('gulp-connect');
 var replace = require('gulp-replace');
-var config = require("./config.js");
 
 
 //public clean
@@ -23,8 +21,7 @@ gulp.task("assets",function(){
         'bower_components/angular-aria/angular-aria.js',
         'bower_components/angular-material/angular-material.js',
         'bower_components/angular-material/angular-material-mocks.js',
-        'bower_components/angular-material-icons/angular-material-icons.js',
-        'bower_components/oclazyload/dist/ocLazyLoad.js'
+        'bower_components/angular-material-icons/angular-material-icons.js'
     ])
         .pipe(concat('angular.min.js'))
         .pipe(uglify())
@@ -38,17 +35,14 @@ gulp.task('copy',function(){
     gulp.src('src/app/templates/*').pipe(gulp.dest('dist/templates'));
     gulp.src('src/index.html').pipe(gulp.dest('dist'));
     gulp.src('src/404.html').pipe(gulp.dest('dist'));
+    fse.copySync('src/app/views/man', 'dist/views/man');
 
-    config.modules.forEach(function (item) {
-        fse.copySync(item.path, 'dist/views/'+item.name);
-    })
+    fse.copySync('src/app/views/public', 'dist/views/public');
 });
 
 //app builder
 gulp.task('app',function(){
-    gulp.src(['src/config.js'])
-        .pipe(gulp.dest('dist/scripts'));
-    gulp.src(['src/app/components/*','src/app/*.js'])
+    gulp.src(['src/app/*.js'])
         .pipe(concat('app.js'))
         .pipe(gulp.dest('dist/scripts'));
     gulp.src('src/app/*.css')
@@ -56,13 +50,11 @@ gulp.task('app',function(){
         .pipe(gulp.dest('dist/styles'));
     gulp.src(['src/app/directives/*.js'])
         .pipe(concat('directive.min.js'))
-        .pipe(gulp.dest('dist/scripts/directives'));
+        .pipe(gulp.dest('dist/scripts'));
 });
 
 gulp.task('app-build',function(){
-    gulp.src(['src/config.js'])
-        .pipe(gulp.dest('dist/scripts'));
-    gulp.src(['src/app/components/*','src/app/*.js'])
+    gulp.src(['src/app/*.js'])
         .pipe(concat('app.js'))
         .pipe(replace(/\/\/#[^#]*\/\/##/g,''))
         .pipe(uglify({
@@ -79,31 +71,24 @@ gulp.task('app-build',function(){
         .pipe(uglify({
             mangle:false
         }))
-        .pipe(gulp.dest('dist/scripts/directives'));
+        .pipe(gulp.dest('dist/scripts'));
 });
 
 gulp.task('service',function(){
     gulp.src('src/app/services/*.js')
-        .pipe(gulp.dest('dist/scripts/services/'));
+        .pipe(gulp.dest('dist/scripts/'));
 });
 
-gulp.task('controllers',function(){
-    gulp.src('src/app/controllers/*.js')
-        .pipe(gulp.dest('dist/scripts/controllers/'));
-});
 gulp.task('replace',function(){
     gulp.src('src/app/services/*.js')
         .pipe(replace(/\/\/#[^#]*\/\/##/g,''))
-        .pipe(gulp.dest('dist/scripts/services/'));
-    gulp.src('src/app/controllers/*.js')
-        .pipe(replace(/\/\/#[^#]*\/\/##/g,''))
-        .pipe(gulp.dest('dist/scripts/controllers/'));
+        .pipe(gulp.dest('dist/scripts/'));
 });
 
 
 gulp.task('watch', function () {
-    gulp.watch(['src/index.html','src/app/templates/*','src/app/services/*','src/app/controllers/*','src/app/views/**/*.html','src/app/views/**/**/*'], ['copy','reload']);
-    gulp.watch(['src/app/*.js','src/app/components/*','src/app/*.css'], ['app','reload']);
+    gulp.watch(['src/index.html','src/app/templates/*','src/app/views/**/*.html','src/app/views/**/**/*'], ['copy','reload']);
+    gulp.watch(['src/app/*.js','src/app/*.css'], ['app','reload']);
 });
 gulp.task('reload',function () {
     gulp.src('dist').pipe(connect.reload())
@@ -115,7 +100,7 @@ gulp.task('connect',['dev'],function(){
     })
 });
 
-gulp.task('dev',['clean', 'assets', 'copy','app','service','controllers']);
+gulp.task('dev',['clean', 'assets', 'copy','app','service']);
 gulp.task('build-dev',['connect','watch']);
 
 gulp.task('build',['clean', 'assets', 'copy','app-build','replace']);
