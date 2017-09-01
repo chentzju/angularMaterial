@@ -8,11 +8,15 @@ var myApp = angular.module("myApp",['ui.router','ngMaterial','ngAria','ngAnimate
                 templateUrl:'views/public/app.html',
                 controller:'HomeCtrl'
             })
+            .state('about', {
+                url:'/about',
+                templateUrl:'views/public/about.html'
+            })
             .state('error',{
                 url:'/error',
                 templateUrl:'404.html'
             })
-            .state('manList',{
+            .state('man.manList',{
                 url:'/manList',
                 title:'人员列表',
                 templateUrl:'views/man/manList.html',
