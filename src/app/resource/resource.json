@@ -19,6 +19,12 @@
       "sex": "女",
       "photo":"images/2.jpg",
       "interest":["爱好1", "爱好2"]
+    },{
+      "name": "王点",
+      "age": 26,
+      "sex": "女",
+      "photo":"images/2.jpg",
+      "interest":["爱好1", "爱好2"]
     }
   ]
 }
