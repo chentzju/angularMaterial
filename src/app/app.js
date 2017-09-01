@@ -44,7 +44,7 @@ var myApp = angular.module("myApp",['ui.router','ngMaterial','ngAria','ngAnimate
         ManService.then(function (result) {
             var users=result.data.dateList
             $scope.users = users;
-            console.log($scope.users)
+            // console.log($scope.users)
             //实现查询功能
             var isopen=true;
             $scope.sort=function(str){
@@ -52,9 +52,6 @@ var myApp = angular.module("myApp",['ui.router','ngMaterial','ngAria','ngAnimate
                 isopen=!isopen;
                 // console.log(isopen);
             };
-            $scope.concentrate=function(){
-                // console.log("已聚焦");
-            }
             $scope.$watch('name', function(name) {
                 console.log($scope.name);
                 if(name==""){
@@ -70,7 +67,7 @@ var myApp = angular.module("myApp",['ui.router','ngMaterial','ngAria','ngAnimate
 
 
     }])
-    .controller("ManDetailCtrl",["$scope",'$stateParams','ManService',function ($scope,$stateParams,ProductService) {
+    .controller("ManDetailCtrl",["$scope",'$stateParams','ManService',function ($scope,$stateParams,ManService) {
 
 
     }])
