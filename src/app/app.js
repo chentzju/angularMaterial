@@ -39,14 +39,37 @@ var myApp = angular.module("myApp",['ui.router','ngMaterial','ngAria','ngAnimate
 
 
     }])
-    .controller("ManCtrl",["$scope","ManService",function ($scope,ManService) {
+    .controller("ManCtrl",["$scope","ManService","$filter",function ($scope,ManService,$filter) {
 
         ManService.then(function (result) {
-            $scope.users = result.data.dateList;
+            var users=result.data.dateList
+            $scope.users = users;
+            console.log($scope.users)
+            //实现查询功能
+            var isopen=true;
+            $scope.sort=function(str){
+                $scope.users=$filter("orderBy")($scope.users,str,isopen);
+                isopen=!isopen;
+                // console.log(isopen);
+            };
+            $scope.concentrate=function(){
+                // console.log("已聚焦");
+            }
+            $scope.$watch('name', function(name) {
+                console.log($scope.name);
+                if(name==""){
+                    $scope.users=$filter("filter")(users)
+                }else{
+                    $scope.users=$filter("filter")(users,name);
+                }
+            });
         })
 
 
-        }])
+
+
+
+    }])
     .controller("ManDetailCtrl",["$scope",'$stateParams','ManService',function ($scope,$stateParams,ProductService) {
 
 
