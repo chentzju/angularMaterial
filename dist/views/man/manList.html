@@ -1,0 +1,65 @@
+<md-toolbar class="">
+    <div class="md-toolbar-tools">
+        <md-button
+                class="md-icon-button"
+                aria-label="Settings"
+                ng-click="showToolbarMenu($event, ctrl.settings)">
+            <ng-md-icon icon="menu"  style=" fill:#fff"  ></ng-md-icon>
+        </md-button>
+        <h2>Toolbar </h2>
+        <span flex></span>
+        <!--<md-button class="md-icon-button" aria-label="Favorite" >-->
+            <ng-md-icon icon="{{clickIcon}}" ng-click="clickIconMorph()" style=" fill:#fff"   options='{"duration": 375, "rotation": "none"}'></ng-md-icon>
+        <!--</md-button>-->
+        <md-button
+                class="md-icon-button"
+                aria-label="More"
+                ng-click="showToolbarMenu($event, ctrl.more)">
+            <ng-md-icon icon="more_vert" style=" fill:white"    ></ng-md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+
+
+<div  class="manList">
+
+    <!--搜索-->
+    <input  type="text" ng-focus="concentrate()" ng-model="name">
+
+
+
+    <md-content class="md-padding" layout-xs="column" layout="row">
+        <div flex-xs flex-gt-xs="50" layout="column">
+            <md-card ng-repeat="user in users" ng-click="showDetails({user:user})">
+                <img ng-src="views/man/img/washedout.png"  class="md-card-image">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{user.name}}个人简介 </span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <p>
+                        {{user.content}}
+                    </p>
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button class="md-icon-button" aria-label="Favorite">
+                        <ng-md-icon icon="favorite" style="fill: pink" ></ng-md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="Settings">
+                        <ng-md-icon icon="dehaze"  ></ng-md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="Share">
+                        <ng-md-icon icon="reply"></ng-md-icon>
+                    </md-button>
+                </md-card-actions>
+            </md-card>
+
+
+
+
+
+
+        </div>
+    </md-content>
+</div>
