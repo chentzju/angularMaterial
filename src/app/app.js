@@ -41,6 +41,18 @@ var myApp = angular.module("myApp",['ui.router','ngMaterial','ngAria','ngAnimate
     }])
     .controller("ManCtrl",["$scope","ManService","$filter",function ($scope,ManService,$filter) {
 
+        $scope.clickIcon = 'thumb_up';
+        $scope.clickIconMorph = function() {
+            if ($scope.clickIcon === 'thumb_up') {
+                $scope.clickIcon = 'thumb_down';
+            }
+            else {
+                $scope.clickIcon = 'thumb_up';
+            }
+        };
+
+
+
         ManService.then(function (result) {
             var users=result.data.dateList
             $scope.users = users;
