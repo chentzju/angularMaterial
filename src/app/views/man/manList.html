@@ -8,12 +8,9 @@
         </md-button>
         <h2>Toolbar </h2>
         <span flex></span>
-        <md-button
-                class="md-icon-button"
-                aria-label="Favorite"
-                ng-click="showToolbarMenu($event, ctrl.favorite)" >
-            <ng-md-icon icon="favorite"  style=" fill:#fff"   options='{"rotation": "counterclock"}'></ng-md-icon>
-        </md-button>
+        <!--<md-button class="md-icon-button" aria-label="Favorite" >-->
+            <ng-md-icon icon="{{clickIcon}}" ng-click="clickIconMorph()" style=" fill:#fff"   options='{"duration": 375, "rotation": "none"}'></ng-md-icon>
+        <!--</md-button>-->
         <md-button
                 class="md-icon-button"
                 aria-label="More"
