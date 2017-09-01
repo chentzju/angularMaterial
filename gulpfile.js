@@ -21,7 +21,8 @@ gulp.task("assets",function(){
         'bower_components/angular-aria/angular-aria.js',
         'bower_components/angular-material/angular-material.js',
         'bower_components/angular-material/angular-material-mocks.js',
-        'bower_components/angular-material-icons/angular-material-icons.js'
+        'bower_components/angular-material-icons/angular-material-icons.js',
+        'bower_components/svg-morpheus/source/js/svg-morpheus.js'
     ])
         .pipe(concat('angular.min.js'))
         .pipe(uglify())
@@ -38,6 +39,7 @@ gulp.task('copy',function(){
     fse.copySync('src/app/views', 'dist/views');
 
     fse.copySync('src/app/resource', 'dist/resource');
+    fse.copySync('src/app/resource/images', 'dist/views/man');
 });
 
 //app builder
