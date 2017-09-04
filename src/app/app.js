@@ -65,12 +65,14 @@ var myApp = angular.module("myApp",['ui.router','ngMaterial','ngAria','ngAnimate
                 isopen=!isopen;
                 // console.log(isopen);
             };
-            $scope.$watch('name', function(name) {
-                console.log($scope.name);
-                if(name==""){
+            $scope.$watch('searchText', function(searchText) {
+                console.log($scope.searchText);
+                if(searchText==""){
                     $scope.users=$filter("filter")(users)
+                    console.log($scope.users)
                 }else{
-                    $scope.users=$filter("filter")(users,name);
+                    $scope.users=$filter("filter")(users,searchText);
+                    console.log($scope.users)
                 }
             });
         })
