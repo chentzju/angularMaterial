@@ -1,15 +1,12 @@
 {
   "dateList":[{
-<<<<<<< HEAD
     "name": "詹丽康",
     "age": 26,
     "sex": "男",
-=======
     "name": "詹利康",
     "age": 26,
     "sex": "男",
     "groupName":"一组",
->>>>>>> d665102b7e739f7fbad67c59a9380c503861a0d5
     "content": "Webtwo ipsum dolor sit amet, eskobo chumby doostang bebo. Bubbli greplin stypi prezi mzinga heroku wakoopa, shopify airbnb dogster dopplr gooru jumo, reddit plickers edmodo stypi zillow etsy.",
     "photo":"images/2.jpg",
     "interest":["爱好1", "爱好2"]
