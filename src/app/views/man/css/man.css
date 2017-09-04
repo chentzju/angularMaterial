@@ -1,0 +1,48 @@
+
+
+
+body .manList .list-el {
+    background-color: #ccc;
+    transition: background-color .3s ease-in;
+    -moz-transition: background-color .3s ease-in;
+    -webkit-transition: background-color .3s ease-in;
+}
+
+.list-el.active {
+    animation: list-active 1.6s 1 ease-in-out forwards;
+    -moz-animation: list-active 1.6s 1 ease-in-out forwards;
+    -webkit-animation: list-active 1.6s 1 ease-in-out forwards;
+}
+.list-el.active_reverse {
+    z-index: 11;
+    background: transparent;
+    animation: list-active_reverse 1.6s 1 ease-in-out;
+    -moz-animation: list-active_reverse 1.6s 1 ease-in-out;
+    -webkit-animation: list-active_reverse 1.6s 1 ease-in-out;
+}
+
+body .manList .overlay {
+    background-color: #20638f;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    z-index: 9999;
+    visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+.overlay.active {
+    animation: overlay .8s 1.25s 1 ease-in-out forwards;
+    -webkit-animation: overlay .8s 1.25s 1 ease-in-out forwards;
+    -moz-animation: overlay .8s 1.25s 1 ease-in-out forwards;
+}
+.overlay.active_reverse {
+    animation: overlay-reverse .8s 1 ease-in backwards;
+    -webkit-animation: overlay-reverse .8s 1 ease-in backwards;
+    -moz-animation: overlay-reverse .8s 1 ease-in backwards;
+}

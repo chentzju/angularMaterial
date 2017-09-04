@@ -29,8 +29,8 @@
 
 
     <md-content class="md-padding" layout-xs="column" layout="row">
-        <div flex-xs flex-gt-xs="50" layout="column">
-            <md-card ng-repeat="user in users" ng-click="showDetails({user:user})">
+        <div flex-xs flex-gt-xs="50" layout="column" id="list">
+            <md-card ng-repeat="user in users"  class="list-el inactive" data-id="{user.id}+ov" list-active ng-class="{'active':user.isCurrent == 1,'inactive':user.isCurrent == 0}">
                 <img ng-src="views/man/img/washedout.png"  class="md-card-image">
                 <md-card-title>
                     <md-card-title-text>
@@ -55,11 +55,17 @@
                 </md-card-actions>
             </md-card>
 
+            <section class="overlay list-dea" >
+                <div class="wrap">
+                    <h1>Section 1</h1>
 
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <br><br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
 
-
-
-
+                <button class="close"><span class="mfg-cancel"></span></button>
+            </section>
         </div>
     </md-content>
+
+
 </div>
