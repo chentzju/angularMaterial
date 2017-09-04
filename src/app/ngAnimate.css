@@ -1272,3 +1272,81 @@
     -webkit-transform: perspective(300px) rotateY(0deg);
     opacity: 1;
 }
+
+/*动画*/
+
+/*一*/
+@keyframes topleft-active {
+    0% {
+        transform: translate3d(0%, 0%, 0);
+    }
+
+    33% {
+        transform: translate3d(5%, 5%, 0) scale(1);
+        color: #FFF;
+    }
+
+    40% {
+        transform: translate3d(5%, 5%, 0) scale(1);
+        color: #FFF;
+    }
+
+    50% {
+        color: transparent;
+    }
+
+    100% {
+        transform: translate3d(5%, 5%, 0) scale(20);
+        color: transparent;
+    }
+}
+@-webkit-keyframes fx-el_topleft-active {
+    0% {
+        -webkit-transform: translate3d(0%, 0%, 0);
+    }
+
+    33% {
+        -webkit-transform: translate3d(5%, 5%, 0) scale(1);
+        color: #FFF;
+    }
+
+    40% {
+        -webkit-transform: translate3d(5%, 5%, 0) scale(1);
+        color: #FFF;
+    }
+
+    50% {
+        color: transparent;
+    }
+
+    100% {
+        -webkit-transform: translate3d(5%, 5%, 0) scale(20);
+        color: transparent;
+    }
+}
+@-moz-keyframes topleft-active {
+    0% {
+        -moz-transform: translate3d(0%, 0%, 0);
+    }
+
+    33% {
+        -moz-transform: translate3d(5%, 5%, 0) scale(1);
+        color: #FFF;
+    }
+
+    40% {
+        -moz-transform: translate3d(5%, 5%, 0) scale(1);
+        color: #FFF;
+    }
+
+    50% {
+        color: transparent;
+    }
+
+    100% {
+        -moz-transform: translate3d(5%, 5%, 0) scale(20);
+        color: transparent;
+    }
+}
+
+

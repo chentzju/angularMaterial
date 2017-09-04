@@ -1,4 +1,4 @@
-var myApp = angular.module("myApp",['ui.router','ngMaterial','ngAria','ngAnimate','ngMdIcons'])
+var myApp = angular.module("myApp",['ui.router','ngMaterial','ngAria','ngAnimate'])
     .config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
         $urlRouterProvider.otherwise('/app');
         $stateProvider
