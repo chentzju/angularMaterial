@@ -21,7 +21,7 @@ angular.module('myApp')
                 listActive:'@'
             },
             link:function (scope,element) {
-                var list = angular.element('#list');
+                var list = angular.element(document).find('#list')
                 element.on('click',function () {
 
                     list.find('.list-el').removeClass('inactive_reverse active_reverse').addClass('inactive');
@@ -33,7 +33,7 @@ angular.module('myApp')
 
 
                     var o_target = angular.element(this).data('id');
-                    angular.element('#'+o_target).addClass('active');
+                    angular.element(document).find('#'+o_target).addClass('active');
                 })
             }
         }

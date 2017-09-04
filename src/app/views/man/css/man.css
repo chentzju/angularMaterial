@@ -2,13 +2,15 @@
 
 
 body .manList .list-el {
-    background-color: #ccc;
-    transition: background-color .3s ease-in;
-    -moz-transition: background-color .3s ease-in;
-    -webkit-transition: background-color .3s ease-in;
+    height: 100px;
+    overflow: hidden;
+    transition: height .3s ease-in;
+    -moz-transition: height .3s ease-in;
+    -webkit-transition: height .3s ease-in;
 }
 
 .list-el.active {
+    height: auto;
     animation: list-active 1.6s 1 ease-in-out forwards;
     -moz-animation: list-active 1.6s 1 ease-in-out forwards;
     -webkit-animation: list-active 1.6s 1 ease-in-out forwards;
