@@ -33,6 +33,7 @@ angular.module('myApp')
 
 
                     var o_target = angular.element(this).data('id');
+                    console.log(o_target)
                     angular.element(document).find('#'+o_target).addClass('active');
                 })
             }

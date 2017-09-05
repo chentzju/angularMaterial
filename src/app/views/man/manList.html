@@ -42,36 +42,31 @@
 
     <md-content class="md-padding" layout-xs="column" layout="row">
         <div flex-xs flex-gt-xs="50" layout="column" id="list"  >
-            <md-card ng-repeat="user in users"  class="list-el " data-id="{user.id}+ov" list-active>
-                <md-card-title>
-                    <md-card-title-text>
-                        <span class="md-headline">{{user.name}}个人简介 </span>
-                    </md-card-title-text>
-                </md-card-title>
-                <md-card-content>
-                    <img ng-src="{{user.photo}}" class="md-card-image">
-                </md-card-content>
-                <md-card-actions layout="row" layout-align="end center">
-                    <md-button class="md-icon-button" aria-label="Favorite">
-                        <ng-md-icon icon="favorite" style="fill: pink" ></ng-md-icon>
-                    </md-button>
-                    <md-button class="md-icon-button" aria-label="Settings">
-                        <ng-md-icon icon="dehaze"  ></ng-md-icon>
-                    </md-button>
-                    <md-button class="md-icon-button" aria-label="Share">
-                        <ng-md-icon icon="reply"></ng-md-icon>
-                    </md-button>
-                </md-card-actions>
+            <div style="clear: both"></div>
+            <dropdown  ng-repeat="user in users" >
+                <!--判断是否点开-->
+                <input class="toggle" type="checkbox" id="toggle_{{user.id}}">
+                <!--最小展示-->
+                <lable for='toggle_{{user.id}}'>
+                    <md-card class="list-el fadeInUp list-animate" >
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">{{user.name}}个人简介 </span>
+                            </md-card-title-text>
+                        </md-card-title>
+                        <md-card-content>
+                            <img ng-src="{{user.photo}}" class="md-card-image">
+                        </md-card-content>
 
-                <section class="overlay list-dea" >
+                    </md-card>
+                </lable>
+                <!--最小展示+详细内容-->
+                <section class="overlay list-dea list-animate" >
                     <div class="wrap">
                         <p>{{user.content}}</p>
                     </div>
-
-                    <button class="close"><span class="mfg-cancel"></span></button>
                 </section>
-            </md-card>
-
+            </dropdown>
 
         </div>
 
@@ -82,7 +77,7 @@
             <md-fab-trigger>
                 <md-button aria-label="menu" class="md-fab md-warn">
                     <md-tooltip md-direction="top" md-visible="tooltipVisible">Menu</md-tooltip>
-                    <md-icon md-svg-src="img/icons/menu.svg" aria-label="menu"></md-icon>
+                    <!--<md-icon md-svg-src="img/icons/menu.svg" aria-label="menu"></md-icon>-->
                 </md-button>
             </md-fab-trigger>
 

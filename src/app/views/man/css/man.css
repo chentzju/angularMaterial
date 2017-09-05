@@ -9,42 +9,75 @@ body .manList .list-el {
     -webkit-transition: height .3s ease-in;
 }
 
-.list-el.active {
-    height: auto;
-    animation: list-active 1.6s 1 ease-in-out forwards;
-    -moz-animation: list-active 1.6s 1 ease-in-out forwards;
-    -webkit-animation: list-active 1.6s 1 ease-in-out forwards;
-}
-.list-el.active_reverse {
-    z-index: 11;
-    background: transparent;
-    animation: list-active_reverse 1.6s 1 ease-in-out;
-    -moz-animation: list-active_reverse 1.6s 1 ease-in-out;
-    -webkit-animation: list-active_reverse 1.6s 1 ease-in-out;
-}
+/*.list-el.active {*/
+    /*height: auto;*/
+    /*animation: list-active 1.6s 1 ease-in-out forwards;*/
+    /*-moz-animation: list-active 1.6s 1 ease-in-out forwards;*/
+    /*-webkit-animation: list-active 1.6s 1 ease-in-out forwards;*/
+/*}*/
+/*.list-el.active_reverse {*/
+    /*z-index: 11;*/
+    /*background: transparent;*/
+    /*animation: list-active_reverse 1.6s 1 ease-in-out;*/
+    /*-moz-animation: list-active_reverse 1.6s 1 ease-in-out;*/
+    /*-webkit-animation: list-active_reverse 1.6s 1 ease-in-out;*/
+/*}*/
 
-body .manList .overlay {
-    background-color: #20638f;
-}
+/*body .manList .overlay {*/
+    /*background-color: #20638f;*/
+/*}*/
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    z-index: 9999;
-    visibility: hidden;
     -webkit-font-smoothing: antialiased;
 }
 
-.overlay.active {
-    animation: overlay .8s 1.25s 1 ease-in-out forwards;
-    -webkit-animation: overlay .8s 1.25s 1 ease-in-out forwards;
-    -moz-animation: overlay .8s 1.25s 1 ease-in-out forwards;
+/*.overlay.active {*/
+    /*animation: overlay .8s 1.25s 1 ease-in-out forwards;*/
+    /*-webkit-animation: overlay .8s 1.25s 1 ease-in-out forwards;*/
+    /*-moz-animation: overlay .8s 1.25s 1 ease-in-out forwards;*/
+/*}*/
+/*.overlay.active_reverse {*/
+    /*animation: overlay-reverse .8s 1 ease-in backwards;*/
+    /*-webkit-animation: overlay-reverse .8s 1 ease-in backwards;*/
+    /*-moz-animation: overlay-reverse .8s 1 ease-in backwards;*/
+/*}*/
+
+dropdown{
+    display:inline-block;
+    margin: 20px 0;
 }
-.overlay.active_reverse {
-    animation: overlay-reverse .8s 1 ease-in backwards;
-    -webkit-animation: overlay-reverse .8s 1 ease-in backwards;
-    -moz-animation: overlay-reverse .8s 1 ease-in backwards;
+dropdown lable{
+    position: relative;
+
+}
+dropdown input{
+    display: none;
+}
+dropdown input ~ section{
+    position: relative;
+    display: none;
+    opacity: 0;
+    top:-100px;
+}
+dropdown input:checked + lable{
+    background: #1abc9c;
+    color: #fff;
+}
+dropdown input:checked ~ section{
+    display: block;
+    opacity: 1;
+    top: 0;
+}
+.list-animate{
+    transition: all .3s;
+    -ms-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+
 }
