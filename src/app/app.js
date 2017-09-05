@@ -55,12 +55,12 @@ var myApp = angular.module("myApp",['ui.router','ngMaterial','ngAria','ngAnimate
 
         ManService.then(function (result) {
             var users=result.data.dateList;
-
-           var sort = ABCSort(users);
+            listSort(users);
+            $scope.users = users;
             console.log($scope.users)
             //实现查询功能
             var isopen=true;
-            $scope.sorts=function(str){
+            $scope.sort=function(str){
                 $scope.users=$filter("orderBy")($scope.users,str,isopen);
                 isopen=!isopen;
             };
@@ -68,6 +68,7 @@ var myApp = angular.module("myApp",['ui.router','ngMaterial','ngAria','ngAnimate
                 console.log($scope.searchText);
                 if(searchText === ""){
                     $scope.users=$filter("filter")(users);
+                    console.log($scope.users)
                 }else{
                     $scope.users=$filter("filter")(users,searchText);
                     console.log($scope.users)
