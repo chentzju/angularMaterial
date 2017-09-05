@@ -47,9 +47,13 @@ angular.module('myApp')
                 listActive:'@'
             },
             link:function (scope,element) {
-                //var list = angular.element(document).find('#list')
                 element.on('click',function () {
-                    console.log(angular.element(this).attr('data-id'))
+
+                    var detail_target = angular.element(this).attr('data-id');
+                    var de = document.getElementById(detail_target);
+                    de.setAttribute('class','active list-detail')
+                    angular.element(this).find('.md-card-image').addClass('aa')
+                    // angular.element(document).find('#'+detail_target).addClass('active');
                     // list.find('.list-el').removeClass('inactive_reverse active_reverse').addClass('inactive');
                     // list.removeClass('rotate rotate_reverse').addClass('rotate');
                     // list.find('.overlay').removeClass('active active_reverse');
