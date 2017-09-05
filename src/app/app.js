@@ -131,8 +131,8 @@ var myApp = angular.module("myApp",['ui.router','ngMaterial','ngAria','ngAnimate
 
         ManService.then(function (result) {
             var users=result.data.dateList;
-            listSort(users);
-            $scope.users = users;
+
+            $scope.users = ABCSort(users);
             console.log($scope.users)
             //实现查询功能
             var isopen=true;

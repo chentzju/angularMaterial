@@ -41,7 +41,7 @@
 
 
 
-    <!--<md-content class="md-padding" layout-xs="column" layout="row">-->
+    <md-content class="md-padding" layout-xs="column" layout="row">
         <!--<div flex-xs flex-gt-xs="50" layout="column" id="list"  >-->
             <!--<div style="clear: both"></div>-->
             <!--<dropdown  ng-repeat="user in users" >-->
@@ -72,26 +72,45 @@
         <!--</div>-->
     <!--</md-content>-->
 
-    <ul class="demo-list-icon mdl-list">
-        <li class="mdl-list__item" ng-repeat="user in users" >
-            <span class="mdl-list__item-primary-content">
-                {{user.name}}
+    <div class="demo-list-icon mdl-list newList">
+        <div class="mdl-list__item" >
+            <span style="
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: block;">A</span>
+            <ul class="demo-list-icon mdl-list newList">
+                <li class="mdl-list__item" ng-repeat="user in users" list-active data-id="active_{{user.id}}">
+                    <span class="mdl-list__item-primary-content">
+                        {{user.name}}
 
-            </span>
-            <img ng-src="{{user.photo}}" class="md-card-image">
-        </li>
+                    </span>
+                    <img ng-src="{{user.photo}}" class="md-card-image">
 
-    </ul>
+                    <!--详细内容-->
+                    <secition class="list-detail" id="active_{{user.id}}">
+
+                    </secition>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+
+
+
 
         <md-fab-speed-dial ng-hide="demo.hidden" md-direction="left" md-open="demo.isOpen"
                            class="md-scale md-fab-top-right" ng-class="{ 'md-hover-full': demo.hover }"
                            ng-mouseenter="demo.isOpen=true" ng-mouseleave="demo.isOpen=false">
-            <md-fab-trigger>
-                <md-button aria-label="menu" class="md-fab md-warn">
-                    <md-tooltip md-direction="top" md-visible="tooltipVisible">Menu</md-tooltip>
-                    <!--<md-icon md-svg-src="img/icons/menu.svg" aria-label="menu"></md-icon>-->
-                </md-button>
-            </md-fab-trigger>
+            <!--<md-fab-trigger>-->
+                <!--<md-button aria-label="menu" class="md-fab md-warn">-->
+                    <!--<md-tooltip md-direction="top" md-visible="tooltipVisible">Menu</md-tooltip>-->
+                    <!--&lt;!&ndash;<md-icon md-svg-src="img/icons/menu.svg" aria-label="menu"></md-icon>&ndash;&gt;-->
+                <!--</md-button>-->
+            <!--</md-fab-trigger>-->
 
             <md-fab-actions>
                 <div ng-repeat="item in items">
