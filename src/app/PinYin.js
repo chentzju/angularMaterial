@@ -36,25 +36,21 @@ function ucfirst(l1){
 }
 
 
-/****************************
-		汉字转拼音↑↑↑↑↑↑
-*****************************/
-
 //按拼音首字母（分类）
 function ABCSort(data){
     var arr=[],firstName;
 
     for(var i=0;i<data.length;i++){
     	//获取姓名拼音首字母
-       	firstName=data[i].sorts=codefans_net_CC2PY(data[i].name).substr(0,1);
-
-       	//统一转大写字母（适用于英文字母排序）
+       	firstName=data[i].sort=codefans_net_CC2PY(data[i].name).substr(0,1);
+       	
+      	//用于首字母排序 	
         arr.push(firstName.toUpperCase());
 
     }
 
     //拼音首字母数组去重
-	var arrlist=[];//数组用于排序
+	var arrlist=[];
 	for(i=0;i<arr.length;i++){
 		if(arrlist.indexOf(arr[i])==-1){
 			arrlist.push(arr[i]);
@@ -64,37 +60,35 @@ function ABCSort(data){
 	//数据按拼音首字母分类重组
 	var dataSort=[];
 	for(var i=0;i<arrlist.length;i++){
-		dataSort[i]={sorts:arrlist[i]};
+		dataSort[i]={sort:arrlist[i]};
 		dataSort[i].details=[];
 		for(var j=0;j<data.length;j++){
-			if(data[j].sorts.toUpperCase()==dataSort[i].sorts){
+			if(data[j].sort.toUpperCase()==dataSort[i].sort){
 				dataSort[i].details.push(data[j]);
 			}
     	}
 	}
 
-    function sortarr(arrlist,dataSort){
-	    for(i=0;i<arrlist.length-1;i++){
-	        for(j=0;j<arrlist.length-1-i;j++){
-	            if(arrlist[j]>arrlist[j+1]){
-	                var temp=arrlist[j];
-	                arrlist[j]=arrlist[j+1];
-	                arrlist[j+1]=temp;
+    function sortarr(arr,dataSort){
 
-	                var sortdata=dataSort[j];
-	                dataSort[j]=dataSort[j+1];
-	                dataSort[j+1]=sortdata;
-	            }
-	        }
-	    }
-	    return dataSort;
-	}
-	sortarr(arrlist,dataSort);
+      	//排序
+        for(j=0;j<arr.length-1-i;j++){
+            if(arr[j]>arr[j+1]){
+                var temp=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=temp;
+
+                var sortdata=dataSort[j];
+                dataSort[j]=dataSort[j+1];
+                dataSort[j+1]=sortdata;
+            }
+        }
+    }  
+    sortarr(arr,dataSort);
 
     return dataSort;
 }
 
-/********************************/
 
 //按组分类
 function timeSort(data,timeStr){
@@ -116,15 +110,18 @@ function timeSort(data,timeStr){
 			arrlist.push(arr[i]);
 		}
 	}
+	console.log(arrlist);
 	
+
+	//数据按拼音首字母分类重组
 	var dataSort=[];
 	for(var i=0;i<arrlist.length;i++){
-		dataSort[i]={sorts:arrlist[i]};
+		dataSort[i]={sort:arrlist[i]};
 		dataSort[i].details=[];
 
 		for(var j=0;j<data.length;j++){
 			for(var key in data[j]){
-				if(data[j][key]==dataSort[i].sorts){
+				if(data[j][key]==dataSort[i].sort){
 					dataSort[i].details.push(data[j]);
 				}
 			}

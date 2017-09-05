@@ -1274,79 +1274,284 @@
 }
 
 /*动画*/
+.fadeInUp{
+    -webkit-animation:fadeInUp 1s .2s ease both;
+    -moz-animation:fadeInUp 1s .2s ease both;
+}
+@-webkit-keyframes fadeInUp{
+    0%{opacity:0;
+        -webkit-transform:translateY(20px)}
+    100%{opacity:1;
+        -webkit-transform:translateY(0)}
+}
+@-moz-keyframes fadeInUp{
+    0%{opacity:0;
+        -moz-transform:translateY(20px)}
+    100%{opacity:1;
+        -moz-transform:translateY(0)}
+}
 
-/*一*/
-@keyframes topleft-active {
+/*@-webkit-keyframes list-active {*/
+    /*0% {*/
+        /*-webkit-transform: translate3d(0%, 0%, 0);*/
+    /*}*/
+
+    /*33% {*/
+        /*-webkit-transform: translate3d(5%, 5%, 0) scale(1);*/
+        /*color: #FFF;*/
+    /*}*/
+
+    /*40% {*/
+        /*-webkit-transform: translate3d(5%, 5%, 0) scale(1);*/
+        /*color: #FFF;*/
+    /*}*/
+
+    /*50% {*/
+        /*color: transparent;*/
+    /*}*/
+
+    /*100% {*/
+        /*-webkit-transform: translate3d(5%, 5%, 0) scale(20);*/
+        /*color: transparent;*/
+    /*}*/
+/*}*/
+/*@-moz-keyframes list-active {*/
+    /*0% {*/
+        /*-moz-transform: translate3d(0%, 0%, 0);*/
+    /*}*/
+
+    /*33% {*/
+        /*-moz-transform: translate3d(5%, 5%, 0) scale(1);*/
+        /*color: #FFF;*/
+    /*}*/
+
+    /*40% {*/
+        /*-moz-transform: translate3d(5%, 5%, 0) scale(1);*/
+        /*color: #FFF;*/
+    /*}*/
+
+    /*50% {*/
+        /*color: transparent;*/
+    /*}*/
+
+    /*100% {*/
+        /*-moz-transform: translate3d(5%, 5%, 0) scale(20);*/
+        /*color: transparent;*/
+    /*}*/
+/*}*/
+
+/*二*/
+@keyframes overlay {
     0% {
-        transform: translate3d(0%, 0%, 0);
+        visibility: visible;
+        color: transparent;
     }
 
-    33% {
-        transform: translate3d(5%, 5%, 0) scale(1);
+    50% {
+        background-color: #20638f;
+        color: white;
+    }
+
+    100% {
+        visibility: visible;
+        background-color: #20638f;
+        color: #FFF;
+    }
+}
+@-webkit-keyframes overlay {
+    0% {
+        visibility: visible;
+        color: transparent;
+    }
+
+    50% {
+        background-color: #20638f;
+        color: white;
+    }
+
+    100% {
+        visibility: visible;
+        background-color: #20638f;
+        color: #FFF;
+    }
+}
+@-moz-keyframes overlay {
+    0% {
+        visibility: visible;
+        color: transparent;
+    }
+
+    50% {
+        background-color: #20638f;
+        color: white;
+    }
+
+    100% {
+        visibility: visible;
+        background-color: #20638f;
+        color: #FFF;
+    }
+}
+
+
+@keyframes overlay-reverse {
+    0% {
+        visibility: visible;
+        background-color: #20638f;
         color: #FFF;
     }
 
     40% {
-        transform: translate3d(5%, 5%, 0) scale(1);
-        color: #FFF;
-    }
-
-    50% {
+        background-color: #20638f;
         color: transparent;
     }
 
+    85% {
+        background-color: transparent;
+    }
+
     100% {
+        visibility: invisible;
+        color: transparent;
+        background-color: transparent;
+    }
+}
+@-webkit-keyframes overlay-reverse {
+    0% {
+        visibility: visible;
+        background-color: #20638f;
+        color: #FFF;
+    }
+
+    40% {
+        background-color: #20638f;
+        color: transparent;
+    }
+
+    85% {
+        background-color: transparent;
+    }
+
+    100% {
+        visibility: invisible;
+        color: transparent;
+        background-color: transparent;
+    }
+}
+@-moz-keyframes overlay-reverse {
+    0% {
+        visibility: visible;
+        background-color: #20638f;
+        color: #FFF;
+    }
+
+    40% {
+        background-color: #20638f;
+        color: transparent;
+    }
+
+    85% {
+        background-color: transparent;
+    }
+
+    100% {
+        visibility: invisible;
+        color: transparent;
+        background-color: transparent;
+    }
+}
+
+
+@keyframes list-active_reverse {
+    0% {
         transform: translate3d(5%, 5%, 0) scale(20);
         color: transparent;
-    }
-}
-@-webkit-keyframes fx-el_topleft-active {
-    0% {
-        -webkit-transform: translate3d(0%, 0%, 0);
-    }
-
-    33% {
-        -webkit-transform: translate3d(5%, 5%, 0) scale(1);
-        color: #FFF;
-    }
-
-    40% {
-        -webkit-transform: translate3d(5%, 5%, 0) scale(1);
-        color: #FFF;
+        background-color: #20638f;
     }
 
     50% {
         color: transparent;
+        background-color: #20638f;
+    }
+
+    60% {
+        transform: translate3d(5%, 5%, 0) scale(1);
+        color: #FFF;
+    }
+
+    67% {
+        transform: translate3d(5%, 5%, 0) scale(1);
+        color: #FFF;
+    }
+
+    82% {
+        background-color: #2980b9;
     }
 
     100% {
-        -webkit-transform: translate3d(5%, 5%, 0) scale(20);
-        color: transparent;
+        transform: translate3d(0%, 0%, 0);
     }
 }
-@-moz-keyframes topleft-active {
+@-webkit-keyframes list-active_reverse {
     0% {
-        -moz-transform: translate3d(0%, 0%, 0);
-    }
-
-    33% {
-        -moz-transform: translate3d(5%, 5%, 0) scale(1);
-        color: #FFF;
-    }
-
-    40% {
-        -moz-transform: translate3d(5%, 5%, 0) scale(1);
-        color: #FFF;
+        transform: translate3d(5%, 5%, 0) scale(20);
+        color: transparent;
+        background-color: #20638f;
     }
 
     50% {
         color: transparent;
+        background-color: #20638f;
+    }
+
+    60% {
+        transform: translate3d(5%, 5%, 0) scale(1);
+        color: #FFF;
+    }
+
+    67% {
+        transform: translate3d(5%, 5%, 0) scale(1);
+        color: #FFF;
+    }
+
+    82% {
+        background-color: #2980b9;
     }
 
     100% {
-        -moz-transform: translate3d(5%, 5%, 0) scale(20);
-        color: transparent;
+        transform: translate3d(0%, 0%, 0);
     }
 }
+@-moz-keyframes list-active_reverse {
+    0% {
+        transform: translate3d(5%, 5%, 0) scale(20);
+        color: transparent;
+        background-color: #20638f;
+    }
+
+    50% {
+        color: transparent;
+        background-color: #20638f;
+    }
+
+    60% {
+        transform: translate3d(5%, 5%, 0) scale(1);
+        color: #FFF;
+    }
+
+    67% {
+        transform: translate3d(5%, 5%, 0) scale(1);
+        color: #FFF;
+    }
+
+    82% {
+        background-color: #2980b9;
+    }
+
+    100% {
+        transform: translate3d(0%, 0%, 0);
+    }
+}
+
 
 

@@ -89,7 +89,7 @@ gulp.task('replace',function(){
 
 
 gulp.task('watch', function () {
-    gulp.watch(['src/index.html','src/app/templates/*','src/app/views/**/*.html','src/app/service/*','src/app/views/**/**/*'], ['copy','reload']);
+    gulp.watch(['src/index.html','src/app/templates/*','src/app/views/**/*.html','src/app/service/*','src/app/directives/*','src/app/views/**/**/*'], ['copy','reload']);
     gulp.watch(['src/app/*.js','src/app/*.css'], ['app','reload']);
 });
 gulp.task('reload',function () {

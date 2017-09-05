@@ -1,0 +1,82 @@
+
+
+
+body .manList .list-el {
+    height: 100px;
+    overflow: hidden;
+
+}
+
+.overlay {
+    width: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
+dropdown{
+    display:inline-block;
+    margin: 20px 0;
+}
+dropdown lable{
+    position: relative;
+
+}
+dropdown input{
+    display: none;
+}
+dropdown input ~ section{
+    position: relative;
+    visibility: hidden;
+    opacity: 0;
+    top:-100px;
+}
+dropdown input:checked ~ .list-el{
+    height: 500px;
+    -webkit-transition: all 375ms cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    -moz-transition: all 375ms cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    -o-transition: all 375ms cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    transition: all 375ms cubic-bezier(0.000, 0.000, 0.580, 1.000);
+
+    -webkit-transition-timing-function: cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    -moz-transition-timing-function: cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    -o-transition-timing-function: cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    transition-timing-function: cubic-bezier(0.000, 0.000, 0.580, 1.000);
+}
+dropdown input:checked ~ section{
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+}
+.list-animate{
+    transition: all .375s;
+    -ms-transition: all .375s;
+    -moz-transition: all .375s;
+    -webkit-transition: all .375s;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+
+}
+
+
+/*新样式*/
+.demo-list-icon {
+    width: 100%;
+}
+.mdl-list .mdl-list__item img{
+    height: 66px;
+    border-radius:50%;
+    float: right;
+}
+.newList .list-detail{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    z-index: 9999;
+    visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    background-color: #1abc9c;
+}
