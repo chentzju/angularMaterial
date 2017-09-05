@@ -4,45 +4,13 @@
 body .manList .list-el {
     height: 100px;
     overflow: hidden;
-    transition: height .3s ease-in;
-    -moz-transition: height .3s ease-in;
-    -webkit-transition: height .3s ease-in;
+
 }
 
-/*.list-el.active {*/
-    /*height: auto;*/
-    /*animation: list-active 1.6s 1 ease-in-out forwards;*/
-    /*-moz-animation: list-active 1.6s 1 ease-in-out forwards;*/
-    /*-webkit-animation: list-active 1.6s 1 ease-in-out forwards;*/
-/*}*/
-/*.list-el.active_reverse {*/
-    /*z-index: 11;*/
-    /*background: transparent;*/
-    /*animation: list-active_reverse 1.6s 1 ease-in-out;*/
-    /*-moz-animation: list-active_reverse 1.6s 1 ease-in-out;*/
-    /*-webkit-animation: list-active_reverse 1.6s 1 ease-in-out;*/
-/*}*/
-
-/*body .manList .overlay {*/
-    /*background-color: #20638f;*/
-/*}*/
 .overlay {
     width: 100%;
-    height: 100%;
-    overflow: auto;
     -webkit-font-smoothing: antialiased;
 }
-
-/*.overlay.active {*/
-    /*animation: overlay .8s 1.25s 1 ease-in-out forwards;*/
-    /*-webkit-animation: overlay .8s 1.25s 1 ease-in-out forwards;*/
-    /*-moz-animation: overlay .8s 1.25s 1 ease-in-out forwards;*/
-/*}*/
-/*.overlay.active_reverse {*/
-    /*animation: overlay-reverse .8s 1 ease-in backwards;*/
-    /*-webkit-animation: overlay-reverse .8s 1 ease-in backwards;*/
-    /*-moz-animation: overlay-reverse .8s 1 ease-in backwards;*/
-/*}*/
 
 dropdown{
     display:inline-block;
@@ -57,24 +25,32 @@ dropdown input{
 }
 dropdown input ~ section{
     position: relative;
-    display: none;
+    visibility: hidden;
     opacity: 0;
     top:-100px;
 }
-dropdown input:checked + lable{
-    background: #1abc9c;
-    color: #fff;
+dropdown input:checked ~ .list-el{
+    height: 500px;
+    -webkit-transition: all 375ms cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    -moz-transition: all 375ms cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    -o-transition: all 375ms cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    transition: all 375ms cubic-bezier(0.000, 0.000, 0.580, 1.000);
+
+    -webkit-transition-timing-function: cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    -moz-transition-timing-function: cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    -o-transition-timing-function: cubic-bezier(0.000, 0.000, 0.580, 1.000);
+    transition-timing-function: cubic-bezier(0.000, 0.000, 0.580, 1.000);
 }
 dropdown input:checked ~ section{
-    display: block;
+    visibility: visible;
     opacity: 1;
     top: 0;
 }
 .list-animate{
-    transition: all .3s;
-    -ms-transition: all .3s;
-    -moz-transition: all .3s;
-    -webkit-transition: all .3s;
+    transition: all .375s;
+    -ms-transition: all .375s;
+    -moz-transition: all .375s;
+    -webkit-transition: all .375s;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;

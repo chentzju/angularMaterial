@@ -1,22 +1,42 @@
 <md-toolbar class="">
     <div class="md-toolbar-tools">
-        <md-button
-                class="md-icon-button"
-                aria-label="Settings"
-                ng-click="showToolbarMenu($event, ctrl.settings)">
-            <ng-md-icon icon="menu"  style=" fill:#fff"  ></ng-md-icon>
-        </md-button>
-        <h2>Toolbar </h2>
-        <span flex></span>
-        <!--<md-button class="md-icon-button" aria-label="Favorite" >-->
-            <ng-md-icon icon="{{clickIcon}}" ng-click="clickIconMorph()" style=" fill:#fff"   options='{"duration": 375, "rotation": "none"}'></ng-md-icon>
+        <!--<md-button-->
+                <!--class="md-icon-button"-->
+                <!--aria-label="Settings"-->
+                <!--ng-click="showToolbarMenu($event, ctrl.settings)">-->
+            <!--<ng-md-icon icon="menu"  style=" fill:#fff"  ></ng-md-icon>-->
         <!--</md-button>-->
-        <md-button
-                class="md-icon-button"
-                aria-label="More"
-                ng-click="showToolbarMenu($event, ctrl.more)">
-            <ng-md-icon icon="more_vert" style=" fill:white"    ></ng-md-icon>
+        <!--<h2>Toolbar </h2>-->
+        <!--<span flex></span>-->
+        <!--&lt;!&ndash;<md-button class="md-icon-button" aria-label="Favorite" >&ndash;&gt;-->
+            <!--<ng-md-icon icon="{{clickIcon}}" ng-click="clickIconMorph()" style=" fill:#fff"   options='{"duration": 375, "rotation": "none"}'></ng-md-icon>-->
+        <!--&lt;!&ndash;</md-button>&ndash;&gt;-->
+
+
+        <!-- Left aligned menu below button -->
+        <button id="demo-menu-lower-left"
+                class="mdl-button mdl-js-button mdl-button--icon">
+            <i class="material-icons">dehaze
+            </i>
+        </button>
+
+        <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+            for="demo-menu-lower-left">
+            <li class="mdl-menu__item">Some Action</li>
+            <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li>
+            <li disabled class="mdl-menu__item">Disabled Action</li>
+            <li class="mdl-menu__item">Yet Another Action</li>
+        </ul>
+
+        <!--<button id="demo-menu-lower-right"-->
+                <!--class="mdl-button mdl-js-button mdl-button&#45;&#45;icon">-->
+           <!---->
+        <!--</button>-->
+
+        <md-button class="md-icon-button" aria-label="More"
+            <i class="material-icons">search</i>
         </md-button>
+
     </div>
 </md-toolbar>
 
@@ -45,27 +65,27 @@
             <div style="clear: both"></div>
             <dropdown  ng-repeat="user in users" >
                 <!--判断是否点开-->
-                <input class="toggle" type="checkbox" id="toggle_{{user.id}}">
+                <input type="checkbox" id="toggle_{{user.id}}">
                 <!--最小展示-->
-                <lable for='toggle_{{user.id}}'>
-                    <md-card class="list-el fadeInUp list-animate" >
-                        <md-card-title>
-                            <md-card-title-text>
-                                <span class="md-headline">{{user.name}}个人简介 </span>
-                            </md-card-title-text>
-                        </md-card-title>
-                        <md-card-content>
-                            <img ng-src="{{user.photo}}" class="md-card-image">
-                        </md-card-content>
+                <md-card class="list-el  list-animate" >
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">
+                                <label for="toggle_{{user.id}}">{{user.name}}个人简介</label>
+                            </span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                        <img ng-src="{{user.photo}}" class="md-card-image">
+                    </md-card-content>
+                    <!--最小展示+详细内容-->
+                    <section class="overlay list-dea list-animate" >
+                        <div class="wrap">
+                            <p>{{user.content}}</p>
+                        </div>
+                    </section>
+                </md-card>
 
-                    </md-card>
-                </lable>
-                <!--最小展示+详细内容-->
-                <section class="overlay list-dea list-animate" >
-                    <div class="wrap">
-                        <p>{{user.content}}</p>
-                    </div>
-                </section>
             </dropdown>
 
         </div>
