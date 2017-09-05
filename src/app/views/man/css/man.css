@@ -57,3 +57,14 @@ dropdown input:checked ~ section{
     -ms-backface-visibility: hidden;
 
 }
+
+
+/*新样式*/
+.demo-list-icon {
+    width: 100%;
+}
+.mdl-list .mdl-list__item img{
+    height: 66px;
+    border-radius:50%;
+    float: right;
+}

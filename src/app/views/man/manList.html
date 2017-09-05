@@ -1,21 +1,9 @@
 <md-toolbar class="">
     <div class="md-toolbar-tools">
-        <!--<md-button-->
-                <!--class="md-icon-button"-->
-                <!--aria-label="Settings"-->
-                <!--ng-click="showToolbarMenu($event, ctrl.settings)">-->
-            <!--<ng-md-icon icon="menu"  style=" fill:#fff"  ></ng-md-icon>-->
-        <!--</md-button>-->
-        <!--<h2>Toolbar </h2>-->
-        <!--<span flex></span>-->
-        <!--&lt;!&ndash;<md-button class="md-icon-button" aria-label="Favorite" >&ndash;&gt;-->
-            <!--<ng-md-icon icon="{{clickIcon}}" ng-click="clickIconMorph()" style=" fill:#fff"   options='{"duration": 375, "rotation": "none"}'></ng-md-icon>-->
-        <!--&lt;!&ndash;</md-button>&ndash;&gt;-->
-
 
         <!-- Left aligned menu below button -->
         <button id="demo-menu-lower-left"
-                class="mdl-button mdl-js-button mdl-button--icon">
+                class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect">
             <i class="material-icons">dehaze
             </i>
         </button>
@@ -28,14 +16,7 @@
             <li class="mdl-menu__item">Yet Another Action</li>
         </ul>
 
-        <!--<button id="demo-menu-lower-right"-->
-                <!--class="mdl-button mdl-js-button mdl-button&#45;&#45;icon">-->
-           <!---->
-        <!--</button>-->
 
-        <md-button class="md-icon-button" aria-label="More"
-            <i class="material-icons">search</i>
-        </md-button>
 
     </div>
 </md-toolbar>
@@ -60,36 +41,47 @@
 
 
 
-    <md-content class="md-padding" layout-xs="column" layout="row">
-        <div flex-xs flex-gt-xs="50" layout="column" id="list"  >
-            <div style="clear: both"></div>
-            <dropdown  ng-repeat="user in users" >
-                <!--判断是否点开-->
-                <input type="checkbox" id="toggle_{{user.id}}">
-                <!--最小展示-->
-                <md-card class="list-el  list-animate" >
-                    <md-card-title>
-                        <md-card-title-text>
-                            <span class="md-headline">
-                                <label for="toggle_{{user.id}}">{{user.name}}个人简介</label>
-                            </span>
-                        </md-card-title-text>
-                    </md-card-title>
-                    <md-card-content>
-                        <img ng-src="{{user.photo}}" class="md-card-image">
-                    </md-card-content>
-                    <!--最小展示+详细内容-->
-                    <section class="overlay list-dea list-animate" >
-                        <div class="wrap">
-                            <p>{{user.content}}</p>
-                        </div>
-                    </section>
-                </md-card>
+    <!--<md-content class="md-padding" layout-xs="column" layout="row">-->
+        <!--<div flex-xs flex-gt-xs="50" layout="column" id="list"  >-->
+            <!--<div style="clear: both"></div>-->
+            <!--<dropdown  ng-repeat="user in users" >-->
+                <!--&lt;!&ndash;判断是否点开&ndash;&gt;-->
+                <!--<input type="checkbox" id="toggle_{{user.id}}">-->
+                <!--&lt;!&ndash;最小展示&ndash;&gt;-->
+                <!--<md-card class="list-el  list-animate" >-->
+                    <!--<md-card-title>-->
+                        <!--<md-card-title-text>-->
+                            <!--<span class="md-headline">-->
+                                <!--<label for="toggle_{{user.id}}">{{user.name}}个人简介</label>-->
+                            <!--</span>-->
+                        <!--</md-card-title-text>-->
+                    <!--</md-card-title>-->
+                    <!--<md-card-content>-->
+                        <!--<img ng-src="{{user.photo}}" class="md-card-image">-->
+                    <!--</md-card-content>-->
+                    <!--&lt;!&ndash;最小展示+详细内容&ndash;&gt;-->
+                    <!--<section class="overlay list-dea list-animate" >-->
+                        <!--<div class="wrap">-->
+                            <!--<p>{{user.content}}</p>-->
+                        <!--</div>-->
+                    <!--</section>-->
+                <!--</md-card>-->
 
-            </dropdown>
+            <!--</dropdown>-->
 
-        </div>
+        <!--</div>-->
+    <!--</md-content>-->
 
+    <ul class="demo-list-icon mdl-list">
+        <li class="mdl-list__item" ng-repeat="user in users" >
+            <span class="mdl-list__item-primary-content">
+                {{user.name}}
+
+            </span>
+            <img ng-src="{{user.photo}}" class="md-card-image">
+        </li>
+
+    </ul>
 
         <md-fab-speed-dial ng-hide="demo.hidden" md-direction="left" md-open="demo.isOpen"
                            class="md-scale md-fab-top-right" ng-class="{ 'md-hover-full': demo.hover }"
