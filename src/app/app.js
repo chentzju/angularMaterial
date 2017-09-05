@@ -133,6 +133,9 @@ var myApp = angular.module("myApp",['ui.router','ngMaterial','ngAria','ngAnimate
             var users=result.data.dateList;
 
             $scope.users = ABCSort(users);
+            // newUsers.forEach(function(item){
+            //     $scope.users.push(item)
+            // })
             console.log($scope.users)
             //实现查询功能
             var isopen=true;
