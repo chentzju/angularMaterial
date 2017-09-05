@@ -73,15 +73,15 @@
     <!--</md-content>-->
 
     <div class="demo-list-icon mdl-list newList">
-        <div class="mdl-list__item" >
+        <div style="position:relative;" class="mdl-list__item" ng-repeat="sorts in users">
             <span style="
     height: 100%;
     position: absolute;
     top: 0;
     width: 100%;
-    display: block;">A</span>
+    display: block;">{{sorts.sort}}</span>
             <ul class="demo-list-icon mdl-list newList">
-                <li class="mdl-list__item" ng-repeat="user in users" list-active data-id="active_{{user.id}}">
+                <li class="mdl-list__item" ng-repeat="user in sorts.details" list-active data-id="active_{{user.id}}">
                     <span class="mdl-list__item-primary-content">
                         {{user.name}}
 
