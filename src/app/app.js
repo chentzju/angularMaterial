@@ -128,31 +128,47 @@ var myApp = angular.module("myApp",['ui.router','ngMaterial','ngAria','ngAnimate
         // });
 
 
-
         ManService.then(function (result) {
             var users=result.data.dateList;
+            $scope.users=ABCSort(users);
+            a=ABCSort(users);
+            //console.log( $scope.users);
+            //实现查询功能
+            // var isopen=true;
+            // $scope.sort=function(str){
+            //     $scope.users=$filter("orderBy")($scope.users,str,isopen);
+            //     isopen=!isopen;
+            // };
 
-            $scope.users = ABCSort(users);
-            // newUsers.forEach(function(item){
-            //     $scope.users.push(item)
-            // })
-            console.log($scope.users)
+            // $scope.$watch('searchText', function(searchText) {
+            //     $scope.users=$filter("filter")(users,searchText);
+            //     console.log($scope.users)
+            // });
+
+            $scope.arr1=a;
             //实现查询功能
             var isopen=true;
             $scope.sort=function(str){
-                $scope.users=$filter("orderBy")($scope.users,str,isopen);
+                $scope.arr1=$filter("orderBy")($scope.arr1,str,isopen);
                 isopen=!isopen;
+                //console.log(isopen);
             };
+            $scope.concentrate=function(){
+                console.log("已聚焦");
+            }
             $scope.$watch('searchText', function(searchText) {
-                console.log($scope.searchText);
-                if(searchText === ""){
-                    $scope.users=$filter("filter")(users);
-                    console.log($scope.users)
+                console.log($scope.name);
+                if(searchText==""){
+
                 }else{
-                    $scope.users=$filter("filter")(users,searchText);
-                    console.log($scope.users)
+
+                    $scope.arr1=$filter("filter")(a,searchText);
+                    console.log( $scope.arr1);
                 }
+                //当value改变时执行的代码
             });
+
+
         })
 
 
