@@ -42,47 +42,43 @@
 
     <md-content class="md-padding" layout-xs="column" layout="row">
         <div flex-xs flex-gt-xs="50" layout="column">
-            <md-card ng-repeat="user in users" ng-click="showDetails({user:user})">
-                <img ng-src="views/man/img/washedout.png"  class="md-card-image">
-                <md-card-title>
-                    <md-card-title-text>
-                        <span class="md-headline">{{user.name}}个人简介 </span>
-                    </md-card-title-text>
-                </md-card-title>
-                <md-card-content>
-                    <img ng-src="{{user.photo}}">
-                    <p>
-                        {{user.content}}
-                    </p>
-                </md-card-content>
-                <md-card-actions layout="row" layout-align="end center">
-                    <md-button class="md-icon-button" aria-label="Favorite">
-                        <ng-md-icon icon="favorite" style="fill: pink" ></ng-md-icon>
-                    </md-button>
-                    <md-button class="md-icon-button" aria-label="Settings">
-                        <ng-md-icon icon="dehaze"  ></ng-md-icon>
-                    </md-button>
-                    <md-button class="md-icon-button" aria-label="Share">
-                        <ng-md-icon icon="reply"></ng-md-icon>
-                    </md-button>
-                </md-card-actions>
-            </md-card>
-
-
-
-
-
-
+            <div ng-repeat="item in users">
+                <p >{{item.sort}}</p>
+                <md-card ng-repeat="user in users.details" ng-click="showDetails({user:user})">
+                    <img ng-src="views/man/img/washedout.png"  class="md-card-image">
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">{{user.name}}个人简介 </span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                        <img ng-src="{{user.photo}}">
+                        <p>
+                            {{user.content}}
+                        </p>
+                    </md-card-content>
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-button class="md-icon-button" aria-label="Favorite">
+                            <ng-md-icon icon="favorite" style="fill: pink" ></ng-md-icon>
+                        </md-button>
+                        <md-button class="md-icon-button" aria-label="Settings">
+                            <ng-md-icon icon="dehaze"  ></ng-md-icon>
+                        </md-button>
+                        <md-button class="md-icon-button" aria-label="Share">
+                            <ng-md-icon icon="reply"></ng-md-icon>
+                        </md-button>
+                    </md-card-actions>
+                </md-card>
+            </div>
         </div>
 
 
-        <md-fab-speed-dial ng-hide="demo.hidden" md-direction="left" md-open="demo.isOpen"
-                           class="md-scale md-fab-top-right" ng-class="{ 'md-hover-full': demo.hover }"
-                           ng-mouseenter="demo.isOpen=true" ng-mouseleave="demo.isOpen=false">
+        <md-fab-speed-dial style="position: fixed;" ng-hide="hidden" md-direction="left" md-open="isOpen"
+                           class="md-scale md-fab-bottom-right" ng-class="{ 'md-hover-full': hover }"
+                           ng-mouseenter="isOpen=true" ng-mouseleave="isOpen=false">
             <md-fab-trigger>
-                <md-button aria-label="menu" class="md-fab md-warn">
-                    <md-tooltip md-direction="top" md-visible="tooltipVisible">Menu</md-tooltip>
-                    <md-icon md-svg-src="img/icons/menu.svg" aria-label="menu"></md-icon>
+                <md-button aria-label="more_vert" class="md-fab md-warn">
+                    <md-icon md-svg-src="views/man/img/more_vert.svg" aria-label="more_vert"></md-icon>
                 </md-button>
             </md-fab-trigger>
 
@@ -90,7 +86,7 @@
                 <div ng-repeat="item in items">
                     <md-button aria-label="{{item.name}}" class="md-fab md-raised md-mini"
                                ng-click="demo.openDialog($event, item)">
-                        <md-tooltip md-direction="{{item.direction}}" md-visible="tooltipVisible"
+                        <md-tooltip md-direction="left" md-visible="tooltipVisible"
                                     md-autohide="false">
                             {{item.name}}
                         </md-tooltip>

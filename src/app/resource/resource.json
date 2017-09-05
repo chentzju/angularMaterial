@@ -5,7 +5,7 @@
     "sex": "男",
     "groupName":"一组",
     "content": "Webtwo ipsum dolor sit amet, eskobo chumby doostang bebo. Bubbli greplin stypi prezi mzinga heroku wakoopa, shopify airbnb dogster dopplr gooru jumo, reddit plickers edmodo stypi zillow etsy.",
-    "photo":"views/man/2.jpg",
+    "photo":"views/man/img/2.jpg",
     "interest":["爱好1", "爱好2"]
   },{
     "name": "范佩瑶",
@@ -40,6 +40,13 @@
       "groupName":"三组",
       "content": "Webtwo ipsum dolor sit amet, eskobo chumby doostang bebo. Bubbli greplin stypi prezi mzinga heroku wakoopa, shopify airbnb dogster dopplr gooru jumo, reddit plickers edmodo stypi zillow etsy.",
       "photo":"views/man/2.jpg",
+      "interest":["爱好1", "爱好2"]
+    },{
+      "name": "旅店",
+      "age": 26,
+      "sex": "女",
+      "groupName":"三组",
+      "content": "eeeeee",
       "interest":["爱好1", "爱好2"]
     }
   ]
