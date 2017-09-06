@@ -92,16 +92,27 @@
         <img ng-src="{{user.photo}}" class="md-card-image">
 
         <div class="demo-card-square mdl-card  list-de-con">
-            <div class="mdl-card__title mdl-card--expand">
-                <i class="material-icons">call</i>
+            <div class="mdl-card__title mdl-card--expand ">
+                <i class="material-icons marginRight">call</i>
                 <span>
-                    <div>0571-55555</div>
-                    <div>联系电话</div>
+                    <div class="color-normal marginBottom">135-9625-5555</div>
+                    <div class="color-gary">Mobile</div>
+                </span>
+            </div>
+            <div class="mdl-card__actions ">
+                <span class="width100  card-border">
+                    <div  class="color-normal marginBottom">0571-5555555</div>
+                    <div class="color-gary">Work</div>
                 </span>
             </div>
             <div class="mdl-card__supporting-text">
                 <i class="material-icons marginRight">mail</i>Email
                 <span ng-bind="user.name"></span>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    View Updates
+                </a>
             </div>
         </div>
     </secition>

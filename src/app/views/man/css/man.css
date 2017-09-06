@@ -93,9 +93,23 @@ dropdown input:checked ~ section{
     width:100%;
 }
 .list-detail .list-de-con .mdl-card--expand{
-    padding:30px;
-    color: rgba(0,0,0,.54);
+    padding: 30px 30px 20px;
+}
+.color-normal{
+    color: #898989;
+}
+.color-gary{
+    color: #8e8e8e;
 }
 .list-detail .marginRight{
     margin-right:10px;
+}
+.marginBottom{
+    margin-bottom:5px;
+}
+.list-detail .width100{
+    width:100%
+}
+.list-detail .card-border{
+border-top: 1px solid rgba(0,0,0,.1);
 }
