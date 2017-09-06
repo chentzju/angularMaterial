@@ -12,55 +12,23 @@
 <div  class="manList">
 
     <!--搜索-->
-    <!--<input  type="text"  ng-model="searchText" id="input-0" >-->
-
-         <md-autocomplete md-no-cache="true"
-                          md-selected-item="selectedItem"
-                          md-search-text="searchText" md-items="item in search"
-                          placeholder="search"
-                          md-item-text="item.name">
-             <md-item-template>
-                 <span md-highlight-text="searchText">{{item.name}}</span>
-             </md-item-template>
-             <md-not-found>
-                 No states matching "{{searchText}}" were found.
-             </md-not-found>
-         </md-autocomplete>
+     <md-autocomplete md-no-cache="true"
+                      md-selected-item="selectedItem"
+                      md-search-text="searchText" md-items="item in search"
+                      placeholder="search"
+                      md-item-text="item.name">
+         <md-item-template>
+             <span md-highlight-text="searchText">{{item.name}}</span>
+         </md-item-template>
+         <md-not-found>
+             No states matching "{{searchText}}" were found.
+         </md-not-found>
+     </md-autocomplete>
 
 
 
 
     <md-content class="md-padding" layout-xs="column" layout="row">
-        <!--<div flex-xs flex-gt-xs="50" layout="column" id="list"  >-->
-            <!--<div style="clear: both"></div>-->
-            <!--<dropdown  ng-repeat="user in users" >-->
-                <!--&lt;!&ndash;判断是否点开&ndash;&gt;-->
-                <!--<input type="checkbox" id="toggle_{{user.id}}">-->
-                <!--&lt;!&ndash;最小展示&ndash;&gt;-->
-                <!--<md-card class="list-el  list-animate" >-->
-                    <!--<md-card-title>-->
-                        <!--<md-card-title-text>-->
-                            <!--<span class="md-headline">-->
-                                <!--<label for="toggle_{{user.id}}">{{user.name}}个人简介</label>-->
-                            <!--</span>-->
-                        <!--</md-card-title-text>-->
-                    <!--</md-card-title>-->
-                    <!--<md-card-content>-->
-                        <!--<img ng-src="{{user.photo}}" class="md-card-image">-->
-                    <!--</md-card-content>-->
-                    <!--&lt;!&ndash;最小展示+详细内容&ndash;&gt;-->
-                    <!--<section class="overlay list-dea list-animate" >-->
-                        <!--<div class="wrap">-->
-                            <!--<p>{{user.content}}</p>-->
-                        <!--</div>-->
-                    <!--</section>-->
-                <!--</md-card>-->
-
-            <!--</dropdown>-->
-
-        <!--</div>-->
-    <!--</md-content>-->
-
     <div class="demo-list-icon mdl-list newList" >
         <div style="position:relative;" class="mdl-list__item" ng-repeat="sorts in users">
             <span style="position: absolute;top: 0;display: block;">{{sorts.sorts}}</span>
@@ -81,43 +49,112 @@
     <!--详细内容-->
         <div ng-repeat="user in users">
             <secition class="list-detail" id="active_{{i.id}}"  ng-repeat="i in user.details" >
-                <md-toolbar class="toolbar">
-                    <div class="md-toolbar-tools">
-                        <!-- Left aligned menu below button -->
-                        <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect">
 
-                            <i class="material-icons" ng-click="closeDe(i.id)">keyboard_backspace</i>
-                        </button>
-                    </div>
-                </md-toolbar>
-                <img ng-src="{{i.photo}}" class="md-card-image">
+                <i class="material-icons close" ng-click="closeDe(i.id)">close</i>
 
-        <div class="demo-card-square mdl-card  list-de-con">
-            <div class="mdl-card__title mdl-card--expand ">
-                <i class="material-icons marginRight">call</i>
-                <span>
-                    <div class="color-normal marginBottom">135-9625-5555</div>
-                    <div class="color-gary">Mobile</div>
-                </span>
+                <img ng-src="{{i.photo}}" class="md-card-image  mdl-shadow--2dp">
+
+            <div class="demo-card-square mdl-card  list-de-con padding-bottom">
+                <!--电话开始-->
+                <div class="mdl-card__title mdl-card--expand ">
+                    <i class="material-icons marginRight color-blue">call</i>
+                    <span class="marginLeft">
+                        <div class="color-normal marginBottom">135-9625-5555</div>
+                        <div class="color-gary">Mobile</div>
+                    </span>
+                </div>
+                <div class="mdl-card__actions  card-son">
+                    <span class="width100  card-border card-span">
+                        <div  class="color-normal marginBottom">0571-5555555</div>
+                        <div class="color-gary">Work</div>
+                    </span>
+                </div>
+
+                <!--邮件区域-->
+                <div class="mdl-card__title mdl-card--expand ">
+                    <i class="material-icons marginRight color-blue">mail</i>
+                    <span class="marginLeft">
+                        <div class="color-normal marginBottom">13505555555@qq.com</div>
+                        <div class="color-gary">Email</div>
+                    </span>
+                </div>
+                <div class="mdl-card__actions  card-son newcard-son">
+                    <span class="width100  card-border card-span"></span>
+                </div>
+
+                <!--邮件区域-->
+                <div class="mdl-card__title mdl-card--expand ">
+                    <i class="material-icons marginRight color-blue">person</i>
+                    <span class="marginLeft">
+                        <div class="color-normal marginBottom">13505555555@qq.com</div>
+                        <div class="color-gary">Email</div>
+                    </span>
+                </div>
+                <div class="mdl-card__actions  card-son newcard-son">
+                    <span class="width100  card-border card-span"></span>
+                </div>
+                <!--工作经历-->
+                <div class="mdl-card__title mdl-card--expand ">
+                    <i class="material-icons marginRight color-blue">work</i>
+                    <span class="marginLeft">
+                        <div class="color-normal marginBottom">135-9625-5555</div>
+                        <div class="color-gary">Mobile</div>
+                    </span>
+                </div>
+                <div class="mdl-card__actions  card-son">
+                    <span class="width100  card-border card-span">
+                        <div  class="color-normal marginBottom">0571-5555555</div>
+                        <div class="color-gary">Work</div>
+                    </span>
+                </div>
+
+                <!--基本信息-->
+                <div class="mdl-card__title mdl-card--expand ">
+                    <i class="material-icons marginRight color-blue">favorite</i>
+                    <span class="marginLeft">
+                        <div class="color-normal marginBottom">135-9625-5555</div>
+                        <div class="color-gary">籍贯</div>
+                    </span>
+                </div>
+                <div class="mdl-card__actions  card-son">
+                    <span class="width100  card-border card-span">
+                        <div  class="color-normal marginBottom">0571-5555555</div>
+                        <div class="color-gary">爱好</div>
+                    </span>
+                </div>
+                <div class="mdl-card__actions  card-son">
+                    <span class="width100  card-border card-span">
+                        <div  class="color-normal marginBottom">0571-5555555</div>
+                        <div class="color-gary">是否单身</div>
+                    </span>
+                </div>
+                <div class="mdl-card__actions  card-son">
+                    <span class="width100  card-border card-span">
+                        <div  class="color-normal marginBottom">0571-5555555</div>
+                        <div class="color-gary">微信号</div>
+                    </span>
+                </div>
+
+
+
+                <!--电话开始-->
+                <div class="mdl-card__title mdl-card--expand ">
+                    <i class="material-icons marginRight color-blue">place</i>
+                    <span class="marginLeft">
+                        <div class="color-normal marginBottom">135-9625-5555</div>
+                        <div class="color-gary">居住范围</div>
+                    </span>
+                </div>
+                <div class="mdl-card__actions  card-son">
+                    <span class="width100  card-border card-span">
+                        <div  class="color-normal marginBottom">0571-5555555</div>
+                        <div class="color-gary">Work</div>
+                    </span>
+                </div>
+
             </div>
-            <div class="mdl-card__actions ">
-                <span class="width100  card-border">
-                    <div  class="color-normal marginBottom">0571-5555555</div>
-                    <div class="color-gary">Work</div>
-                </span>
-            </div>
-            <div class="mdl-card__supporting-text">
-                <i class="material-icons marginRight">mail</i>Email
-                <span ng-bind="user.name"></span>
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                    View Updates
-                </a>
-            </div>
+        </secition>
         </div>
-    </secition>
-
 
         <md-fab-speed-dial ng-hide="demo.hidden" md-direction="left" md-open="demo.isOpen"
                            class="md-scale md-fab-top-right" ng-class="{ 'md-hover-full': demo.hover }"

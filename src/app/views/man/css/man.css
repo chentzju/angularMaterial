@@ -88,6 +88,7 @@ dropdown input:checked ~ section{
 .list-detail .md-card-image{
     height: 220px;
     width:100%;
+    margin-bottom: 9px;
 }
 .list-detail .list-de-con{
     width:100%;
@@ -96,20 +97,48 @@ dropdown input:checked ~ section{
     padding: 30px 30px 20px;
 }
 .color-normal{
-    color: #898989;
+    color: #555;
 }
 .color-gary{
-    color: #8e8e8e;
+    color: #999;
 }
-.list-detail .marginRight{
-    margin-right:10px;
+/*.list-detail .marginRight{*/
+    /*margin-right:10px;*/
+/*}*/
+
+.list-detail .marginLeft{
+    padding-left:15px;
 }
 .marginBottom{
-    margin-bottom:5px;
+    margin-bottom:6px;
 }
 .list-detail .width100{
     width:100%
 }
 .list-detail .card-border{
     border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.toolbar{
+    background: #03A9F5;
+}
+.color-blue{
+    color: #03A9F5;
+}
+.list-detail .close{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.card-son{
+    padding: 10px 30px 0 59px !important;
+}
+.card-span{
+    padding:0 0 15px 10px ;
+}
+.card-son.newcard-son{
+    padding-top: 0!important;
+    margin-top: -18px;
+}
+.list-de-con .padding-bottom{
+    padding-bottom: 100px;
 }
