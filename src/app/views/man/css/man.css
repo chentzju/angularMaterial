@@ -142,3 +142,9 @@ dropdown input:checked ~ section{
 .list-de-con .padding-bottom{
     padding-bottom: 100px;
 }
+.list-detail .mdl-card__title-text{
+    color: #fff;
+    position: absolute;
+    left: 59px;
+    top: 150px;
+}
