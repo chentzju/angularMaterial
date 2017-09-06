@@ -60,7 +60,7 @@ var myApp = angular.module("myApp",['ui.router','ngMaterial','ngAria','ngAnimate
             var users=result.data.dateList;
             var newUser = [];
             $scope.users = [];
-
+            $scope.search;
             newUser = ABCSort(users);
             for (var i=0;i<newUser.length;i++){
                 $scope.users.push(newUser[i]);
@@ -77,10 +77,10 @@ var myApp = angular.module("myApp",['ui.router','ngMaterial','ngAria','ngAnimate
             inp.addEventListener("click",function(){
                 $scope.$watch('searchText', function(searchText) {
                     if(searchText===""){
-                        $scope.users=$filter("filter")(newUser)
-                        console.log($scope.users)
+                        $scope.users=$filter("filter")(newUser);
                     }else{
                         $scope.users=$filter("filter")(newUser,searchText);
+                        $scope.search=$filter("filter")(users,searchText);
                     }
                 });
             })

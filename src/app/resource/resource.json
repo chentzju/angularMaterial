@@ -1,7 +1,7 @@
 {
   "dateList":[{
-    "sex": "男",
     "name": "詹利康",
+    "id":1,
     "sex": "男",
     "groupName":"一组",
     "photo":"views/man/img/2.jpg",
@@ -42,16 +42,11 @@
       "interest":["爱好1", "爱好2"]
     },{
       "name": "旅店",
+      "id":6,
       "age": 26,
       "sex": "女",
       "groupName":"三组",
-      "interest":["爱好1", "爱好2"]
-    },{
-      "name": "思思",
-      "age": 12,
-      "sex": "女",
-      "groupName":"三组",
-      "photo":"views/man/2.jpg",
+      "content": "eeeeee",
       "interest":["爱好1", "爱好2"]
     }
   ]
