@@ -14,18 +14,19 @@
 
     <!--搜索-->
     <!--<input  type="text"  ng-model="name">-->
-    <md-autocomplete md-no-cache="true"
-                     md-selected-item="selectedItem"
-                     md-search-text="searchText" md-items="item in users"
-                     placeholder="search"
-                     md-item-text="item.name">
-        <md-item-template>
-            <span md-highlight-text="searchText">{{item.name}}</span>
-        </md-item-template>
-        <md-not-found>
-            No states matching "{{searchText}}" were found.
-        </md-not-found>
-    </md-autocomplete>
+         <md-autocomplete md-no-cache="true"
+                          md-selected-item="selectedItem"
+                          md-search-text="searchText" md-items="item in users.details"
+                          placeholder="search"
+                          md-item-text="item.name">
+             <md-item-template>
+                 <span md-highlight-text="searchText">{{item.name}}</span>
+             </md-item-template>
+             <md-not-found>
+                 No states matching "{{searchText}}" were found.
+             </md-not-found>
+         </md-autocomplete>
+
 
 
 
@@ -62,9 +63,9 @@
 
     <div class="demo-list-icon mdl-list newList" >
         <div style="position:relative;" class="mdl-list__item" ng-repeat="sorts in users">
-            <span style="position: absolute;top: 0;display: block;">{{sorts.sort}}</span>
+            <span style="position: absolute;top: 0;display: block;">{{sorts.sorts}}</span>
             <ul class="demo-list-icon mdl-list newList">
-                <li class="mdl-list__item fadeInUpBig" ng-repeat="user in users" list-active data-id="active_{{user.id}}">
+                <li class="mdl-list__item fadeInUpBig" ng-repeat="user in sorts.details" list-active data-id="active_{{user.id}}">
                     <span class="mdl-list__item-primary-content">
                         {{user.name}}
 
