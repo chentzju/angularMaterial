@@ -40,7 +40,7 @@ gulp.task('copy',function(){
     fse.copySync('src/app/views', 'dist/views');
 
     fse.copySync('src/app/resource', 'dist/resource');
-    fse.copySync('src/app/resource/images', 'dist/views/man');
+    fse.copySync('src/app/resource/images', 'dist/views/man/img');
 });
 
 //app builder

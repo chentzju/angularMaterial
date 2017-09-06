@@ -48,7 +48,6 @@ var myApp = angular.module("myApp",['ui.router','ngMaterial','ngAria','ngAnimate
     .controller("ManCtrl",["$scope","ManService","$filter",function ($scope,ManService,$filter) {
 
         // 样式
-
          $scope.closeDe = function (id) {
              var id = 'active_'+id;
              var de = document.getElementById(id);
