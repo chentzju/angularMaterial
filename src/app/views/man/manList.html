@@ -12,19 +12,21 @@
 <div  class="manList">
 
     <!--搜索-->
-    <!--<input  type="text"  ng-model="name">-->
-    <md-autocomplete md-no-cache="true"
-                     md-selected-item="selectedItem"
-                     md-search-text="searchText" md-items="item in users"
-                     placeholder="search"
-                     md-item-text="item.name">
-        <md-item-template>
-            <span md-highlight-text="searchText">{{item.name}}</span>
-        </md-item-template>
-        <md-not-found>
-            No states matching "{{searchText}}" were found.
-        </md-not-found>
-    </md-autocomplete>
+    <!--<input  type="text"  ng-model="searchText" id="input-0" >-->
+
+         <md-autocomplete md-no-cache="true"
+                          md-selected-item="selectedItem"
+                          md-search-text="searchText" md-items="item in search"
+                          placeholder="search"
+                          md-item-text="item.name">
+             <md-item-template>
+                 <span md-highlight-text="searchText">{{item.name}}</span>
+             </md-item-template>
+             <md-not-found>
+                 No states matching "{{searchText}}" were found.
+             </md-not-found>
+         </md-autocomplete>
+
 
 
 
@@ -61,16 +63,14 @@
 
     <div class="demo-list-icon mdl-list newList" >
         <div style="position:relative;" class="mdl-list__item" ng-repeat="sorts in users">
-            <span style="position: absolute;top: 0;display: block;">{{sorts.sort}}</span>
+            <span style="position: absolute;top: 0;display: block;">{{sorts.sorts}}</span>
             <ul class="demo-list-icon mdl-list newList">
-                <li class="mdl-list__item fadeInUpBig" ng-repeat="user in users" list-active data-id="active_{{user.id}}">
+                <li class="mdl-list__item fadeInUpBig" ng-repeat="user in sorts.details" list-active data-id="active_{{user.id}}">
                     <span class="mdl-list__item-primary-content">
                         {{user.name}}
 
                     </span>
                     <img ng-src="{{user.photo}}" class="md-card-image">
-
-
                 </li>
 
             </ul>
@@ -79,17 +79,18 @@
     </div>
 
     <!--详细内容-->
-    <secition class="list-detail" id="active_{{user.id}}"   ng-repeat="user in users">
-        <md-toolbar class="toolbar">
-            <div class="md-toolbar-tools">
-                <!-- Left aligned menu below button -->
-                <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect">
+        <div ng-repeat="user in users">
+            <secition class="list-detail" id="active_{{i.id}}"  ng-repeat="i in user.details" >
+                <md-toolbar class="toolbar">
+                    <div class="md-toolbar-tools">
+                        <!-- Left aligned menu below button -->
+                        <button class="mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect">
 
-                    <i class="material-icons" ng-click="closeDe(user.id)">keyboard_backspace</i>
-                </button>
-            </div>
-        </md-toolbar>
-        <img ng-src="{{user.photo}}" class="md-card-image">
+                            <i class="material-icons" ng-click="closeDe(i.id)">keyboard_backspace</i>
+                        </button>
+                    </div>
+                </md-toolbar>
+                <img ng-src="{{i.photo}}" class="md-card-image">
 
         <div class="demo-card-square mdl-card  list-de-con">
             <div class="mdl-card__title mdl-card--expand ">

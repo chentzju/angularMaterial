@@ -20,12 +20,15 @@ gulp.task("assets",function(){
         'bower_components/angular-animate/angular-animate.js',
         'bower_components/angular-aria/angular-aria.js',
         'bower_components/angular-material/angular-material.js',
-        'bower_components/angular-material/angular-material-mocks.js'
+        'bower_components/angular-material/angular-material-mocks.js',
+        'bower_components/material-design-lite/material.min.js'
     ])
         .pipe(concat('angular.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('dist/assets/js'));
-    gulp.src('bower_components/angular-material/*.css').pipe(gulp.dest('dist/assets/styles'));
+    gulp.src([
+        'bower_components/angular-material/*.css',
+        'bower_components/material-design-lite/*.css']).pipe(gulp.dest('dist/assets/styles'));
 
 });
 
